@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="datamaps.world.min.js"></script>
+<!-- <div id="container" style="position: relative; width: 1200px; height: 700px;"></div> -->
+<div id="map_bombs" style="position: relative; width: 1000px; height: 600px; margin-left:13%;"></div>
+<script>
+
+  var bombMap = new Datamap({
+    element: document.getElementById('map_bombs'),
+    scope: 'world',
+    geographyConfig: {
+        popupOnHover: false,
+        highlightOnHover: false
+    },
+    fills: {
+      // Colors for countries
+          "RUS": "#9A3C15",
+          defaultFill: "#2C88BA"
+    },
+    data: {
+      //To add different colors to different countries using the colors above
+        // 'RUS': {fillKey: 'RUS'} 
+    }
+});
+
+     var bombs = [{
+        ID: 'RDS-37',
+        radius: 8,
+        cType: "text/html",
+        fillKey: 'RUS',
+        date: '1955-11-22',
+        latitude: -80,
+        longitude: 0,
+        fillOpacity: 10
+
+      },{
+        ID: 'Tsar Bomba',
+        radius: 8,
+        cType: "text/html",
+        date: '1961-10-31',
+        fillKey: 'RUS',
+        latitude: 73.482,
+        longitude: 54.5854,
+        fillOpacity:10
+      }
+    ];
+//draw bubbles for bombs
+bombMap.bubbles(bombs, {
+    popupTemplate: function (geo, data) { 
+            return ['<div class="hoverinfo">ID: ' +  data.ID,
+            '<br/>Content Type: ' +  data.cType,
+            '<br/>Date: ' +  data.date + '',
+            '</div>'].join('');
+    }
+});
+</script>
+
+
+
+
+
+<body>
+</body>
+</html>
+
+
+
+

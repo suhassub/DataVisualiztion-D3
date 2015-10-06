@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/D3/d3.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/D3/d3.css">
+  <script type="text/javascript" src="/static/D3/d3.min.js"></script>
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      <script src="/static/D3/d3.layout.cloud.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+      <script src="/static/D3/datamaps.world.min.js"></script>
+  <title>Homework3 CSCI572</title> 
+  </head>
+
+  <body bgcolor="#E6E6FA">
+    <h1><p align="center"> CSCI572 - Group 6</p></h1>
+    <p align="center"> Homework 3</p>
+    <div align="center">
+    <input type="text" id="qbox" name="query" style="width:400px;height:30px;">
+    <br/>
+    <div>
+    <input type="submit" id="submit" value="Search" style="position: relative; top: 10px;background-color:lightgreen; width:100px;height:30px;">
+    </div>
+    </div>
+    <div align="center">
+    <div class="tabs">
+    <ul class="tab-links" >
+        <li class="active"><a href="#tab1">D3 World Map</a></li>
+        <li><a href="#tab2">D3 Force Graph</a></li>
+        <li><a href="#tab3">D3 Time Chart</a></li>
+        <li><a href="#tab4">D3 Word Cloud</a></li>
+        <li><a href="#tab5">D3 Bar</a></li>
+        <li><a href="#tab6">D3 Pie</a></li>
+    </ul>
+
+    <div class="tab-content" style="background-color:#E6E6FA;">
+
+        <div id="tab1" class="tab active">
+            <div id="worldmap">
+                <div id="map_bombs" style="position: relative; width: 1000px; height: 600px;"></div>
+            </div>
+
+             
+        </div>
+
+         <div id="tab2" class="tab">
+            <div id="forcegraph">
+                <forcegraph></forcegraph>
+            </div> 
+        </div>
+
+        <div id="tab3" class="tab">
+            <div id="timeseries">
+              <timeseries></timeseries>
+            </div>
+        </div>
+
+        <div id="tab4" class="tab">
+            <div id="wordcloud" align="center">
+              <wordcloud></wordcloud>
+            </div>
+
+            <br/> 
+
+        </div>
+
+        <div id="tab5" class="tab" style="height:500px">
+            <div id="barchart">
+                <barchart></barchart>
+            </div> 
+        </div>
+
+        <div id="tab6" class="tab">
+           <div id="piechart">
+                <piechart></piechart>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+  </body>
+</html>
